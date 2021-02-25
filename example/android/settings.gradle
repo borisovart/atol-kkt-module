@@ -1,6 +1,8 @@
 rootProject.name = 'AtolKktModuleExample'
 apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
 include ':app'
-
+include ':libfptr10'
+project(':libfptr10').projectDir = new File(rootProject.projectDir, '../../android/libfptr10')
 include ':atolkktmodule'
 project(':atolkktmodule').projectDir = new File(rootProject.projectDir, '../../android')
+
