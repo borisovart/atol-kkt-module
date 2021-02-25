@@ -8,7 +8,7 @@ buildscript {
   }
 
   dependencies {
-    classpath 'com.android.tools.build:gradle:3.2.1'
+    classpath 'com.android.tools.build:gradle:4.1.2'
     // noinspection DifferentKotlinGradleVersion
     classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
   }
@@ -33,9 +33,9 @@ android {
     targetSdkVersion getExtOrIntegerDefault('targetSdkVersion')
     versionCode 1
     versionName "1.0"
-    
+
   }
-  
+
   buildTypes {
     release {
       minifyEnabled false
@@ -51,6 +51,9 @@ android {
 }
 
 repositories {
+  flatDir {
+    dirs 'libfptr10'
+  }
   mavenCentral()
   jcenter()
   google()
@@ -126,5 +129,6 @@ def kotlin_version = getExtOrDefault('kotlinVersion')
 dependencies {
   // noinspection GradleDynamicVersion
   api 'com.facebook.react:react-native:+'
+  implementation(name:'libfptr10', ext:'aar')
   implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }

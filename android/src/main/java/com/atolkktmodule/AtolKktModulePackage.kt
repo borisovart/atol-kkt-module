@@ -1,17 +1,22 @@
 package com.atolkktmodule
 
+import com.atolkktmodule.modules.KktModule
 import com.facebook.react.ReactPackage
+import com.facebook.react.bridge.JavaScriptModule
 import com.facebook.react.bridge.NativeModule
 import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.uimanager.ViewManager
+import java.util.*
 
 
 class AtolKktModulePackage : ReactPackage {
-    override fun createNativeModules(reactContext: ReactApplicationContext): List<NativeModule> {
-        return listOf(AtolKktModuleModule(reactContext))
-    }
+  override fun createNativeModules(reactContext: ReactApplicationContext): List<NativeModule> {
+    val modules: MutableList<NativeModule> = ArrayList()
+    modules.add(KktModule(reactContext))
+    return modules
+  }
 
-    override fun createViewManagers(reactContext: ReactApplicationContext): List<ViewManager<*, *>> {
-        return emptyList()
-    }
+  override fun createViewManagers(reactContext: ReactApplicationContext): List<ViewManager<*, *>> {
+    return emptyList()
+  }
 }
