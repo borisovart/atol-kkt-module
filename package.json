@@ -1,7 +1,7 @@
 {
   "name": "atol-kkt-module",
   "version": "0.1.2",
-  "description": "atol kkt module",
+  "description": "Atol KKT module for React Native",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
   "types": "lib/typescript/src/index.d.ts",
